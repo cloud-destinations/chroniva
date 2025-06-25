@@ -1,0 +1,31 @@
+<suite name="Cucumber Parallel Suite" verbose="1" >
+    
+    <!-- Step 1: Run main tests -->
+    <test name="Run All Scenarios" >
+        <classes>
+            <class name="StepDefinitions.TestRunner" />
+        </classes>
+    </test>
+
+    <!-- Step 2: Run failed scenarios (retry) -->
+    <test name="Run Failed Scenarios" thread-count="1">
+        <classes>
+            <class name="StepDefinitions.FailedRun" />
+        </classes>
+    </test>
+
+    <!-- Step 3: Merge cucumber.json + cucumber-rerun.json -->
+    <test name="Merge JSON Files" thread-count="1">
+        <classes>
+            <class name="utils.ReportMergerTrigger" />
+        </classes>
+    </test>
+
+    <!-- Step 4: Generate final merged Extent Spark report -->
+    <test name="Generate Final Report" thread-count="1">
+        <classes>
+            <class name="utils.SuiteTeardown" />
+        </classes>
+    </test>
+
+</suite>

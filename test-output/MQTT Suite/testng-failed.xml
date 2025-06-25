@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [MQTT Suite]" verbose="2">
+  <test thread-count="5" name="MQTT Payload Publisher Test(failed)" verbose="2">
+    <classes>
+      <class name="mqttTests.MqttPayloadPublisher">
+        <methods>
+          <include name="publishMqtt"/>
+        </methods>
+      </class> <!-- mqttTests.MqttPayloadPublisher -->
+    </classes>
+  </test> <!-- MQTT Payload Publisher Test(failed) -->
+</suite> <!-- Failed suite [MQTT Suite] -->
