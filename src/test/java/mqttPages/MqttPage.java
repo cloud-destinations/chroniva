@@ -11,7 +11,6 @@ import StepDefinitions.HelpMethods;
 import StepDefinitions.Hooks;
 import mqttUtils.ExcelUtil;
 import mqttUtils.MqttClientPublisher;
-import pages.config.UnitSettingsPage;
 
 public class MqttPage {
 
@@ -178,10 +177,15 @@ public class MqttPage {
 		}
 	}
 
-	public static void clickNextPageButton() {
-		UnitSettingsPage.naxtPageButton.click();
-		HelpMethods.explicitWait_milliSeconds(500);
-	}
+//	public static void clickNextPageButton() {
+//		UnitSettingsPage.nextPageButton.click();
+//		HelpMethods.explicitWait_milliSeconds(500);
+//	}
+//
+//	public static void clickNextPageLabel() {
+//		UnitSettingsPage.nextPageLabel.click();
+//		HelpMethods.explicitWait_milliSeconds(500);
+//	}
 
 	public static void clickDivByLabelText(String labelText) {
 		HelpMethods.explicitWait_milliSeconds(500);

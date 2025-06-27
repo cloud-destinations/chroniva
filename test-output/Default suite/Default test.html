@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jun 26 23:16:35 IST 2025</td>
+<td>Started on:</td><td>Fri Jun 27 11:38:23 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>52 seconds (52022 ms)</td>
+<tr><td>Total time:</td><td>53 seconds (53802 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,18 +76,64 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='StepDefinitions.TestRunner.runScenario()'><b>runScenario</b><br>Test class: StepDefinitions.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Test each Unit settings payload selection via MQTT", "MQTT Unit settings publishing"</td>
-<td><div><pre>java.lang.AssertionError:  UI value &apos;0 °F&apos; does not match published payload &apos;81&apos;
-	at mqttPages.MqttPage.publishAndVerifySingleCard(MqttPage.java:156)
-	at mqttStepDefinitions.MqttSteps.user_publishes_random_payload_from_excel_row_and_verifies_ui_label(MqttSteps.java:80)
-	at ✽.User publishes random payload from Excel sheet &quot;Unit Settings&quot; row 29 and verifies UI Label(file:///C:/Users/PrakashArulmani/eclipse-workspace/Aaon%20Stratus/src/test/resources/MqttFeatures/Config/MqttUnitSettings.feature:60)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1293187765", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1293187765'><pre>java.lang.AssertionError:  UI value &apos;0 °F&apos; does not match published payload &apos;81&apos;
-	at mqttPages.MqttPage.publishAndVerifySingleCard(MqttPage.java:156)
-	at mqttStepDefinitions.MqttSteps.user_publishes_random_payload_from_excel_row_and_verifies_ui_label(MqttSteps.java:80)
-	at ✽.User publishes random payload from Excel sheet &quot;Unit Settings&quot; row 29 and verifies UI Label(file:///C:/Users/PrakashArulmani/eclipse-workspace/Aaon%20Stratus/src/test/resources/MqttFeatures/Config/MqttUnitSettings.feature:60)
+<td title='StepDefinitions.TestRunner.runScenario()'><b>runScenario</b><br>Test class: StepDefinitions.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify VAV Control selection in Unit Settings via MQTT payload", "MQTT Unit settings publishing"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[text()=&apos;Cool OAT Enable SP&apos;]&quot;}
+  (Session info: chrome=124.0.6367.243)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.6&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [066ec7587f8897c6d9f7a8c8db366aa8, findElement {using=xpath, value=//div[text()=&apos;Cool OAT Enable SP&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.243, chrome: {chromedriverVersion: 124.0.6367.60 (8771130bd84f..., userDataDir: C:\Users\PRAKAS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61040}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61040/devtoo..., se:cdpVersion: 124.0.6367.243, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 066ec7587f8897c6d9f7a8c8db366aa8
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at StepDefinitions.HelpMethods.getWebElement(HelpMethods.java:95)
+	at mqttPages.MqttPage.clickDivByLabelText(MqttPage.java:193)
+	at mqttStepDefinitions.MqttSteps.user_has_to_click_the_lable(MqttSteps.java:103)
+	at ✽.user has to click the &quot;Cool OAT Enable SP&quot; Lable(file:///C:/Users/PrakashArulmani/eclipse-workspace/Aaon%20Stratus/src/test/resources/MqttFeatures/Config/MqttUnitSettings.feature:116)
+</pre></div><a href='#' onClick='toggleBox("stack-trace740265405", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace740265405'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[text()=&apos;Cool OAT Enable SP&apos;]&quot;}
+  (Session info: chrome=124.0.6367.243)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.6&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [066ec7587f8897c6d9f7a8c8db366aa8, findElement {using=xpath, value=//div[text()=&apos;Cool OAT Enable SP&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.243, chrome: {chromedriverVersion: 124.0.6367.60 (8771130bd84f..., userDataDir: C:\Users\PRAKAS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61040}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61040/devtoo..., se:cdpVersion: 124.0.6367.243, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 066ec7587f8897c6d9f7a8c8db366aa8
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at StepDefinitions.HelpMethods.getWebElement(HelpMethods.java:95)
+	at mqttPages.MqttPage.clickDivByLabelText(MqttPage.java:193)
+	at mqttStepDefinitions.MqttSteps.user_has_to_click_the_lable(MqttSteps.java:103)
+	at ✽.user has to click the &quot;Cool OAT Enable SP&quot; Lable(file:///C:/Users/PrakashArulmani/eclipse-workspace/Aaon%20Stratus/src/test/resources/MqttFeatures/Config/MqttUnitSettings.feature:116)
 </pre></div></td>
-<td>50</td>
+<td>52</td>
 <td>StepDefinitions.TestRunner@7ee8290b</td></tr>
 </table><p>
 </body>

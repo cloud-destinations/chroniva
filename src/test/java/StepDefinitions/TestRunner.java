@@ -1,13 +1,14 @@
 package StepDefinitions;
 
+import org.testng.annotations.DataProvider;
+
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
     features = {"src/test/resources"},
     glue = {"StepDefinitions", "mqttStepDefinitions"},
-    tags = "@MqttUnitsettings", //Tags to run TC
+    tags = "@MqttUnitsettings2", //Tags to run TC
     plugin = {
         "pretty",
         "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
@@ -15,12 +16,12 @@ import org.testng.annotations.DataProvider;
         "rerun:target/failedrun.txt"
     },
     monochrome = true,
-    dryRun = false
+    dryRun = false 
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
     
     @Override
-    @DataProvider(parallel = true)
+    @DataProvider(parallel = false)
     public Object[][] scenarios() {
         return super.scenarios();
     }

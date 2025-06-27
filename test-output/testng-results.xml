@@ -2,30 +2,30 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-26T23:16:35 IST" name="Default suite" finished-at="2025-06-26T23:17:27 IST" duration-ms="52022">
+  <suite started-at="2025-06-27T11:38:23 IST" name="Default suite" finished-at="2025-06-27T11:39:17 IST" duration-ms="53802">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-06-26T23:16:35 IST" name="Default test" finished-at="2025-06-26T23:17:27 IST" duration-ms="52022">
+    <test started-at="2025-06-27T11:38:23 IST" name="Default test" finished-at="2025-06-27T11:39:17 IST" duration-ms="53802">
       <class name="StepDefinitions.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" started-at="2025-06-26T23:16:35 IST" name="setUpClass" finished-at="2025-06-26T23:16:36 IST" duration-ms="808" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" started-at="2025-06-27T11:38:23 IST" name="setUpClass" finished-at="2025-06-27T11:38:24 IST" duration-ms="818" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@285f38f6]]>
+                <![CDATA[org.testng.TestRunner@36463b09]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" started-at="2025-06-26T23:16:36 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-26T23:17:27 IST" duration-ms="50532" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" started-at="2025-06-27T11:38:24 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-27T11:39:16 IST" duration-ms="52243" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Test each Unit settings payload selection via MQTT"]]>
+                <![CDATA["Verify VAV Control selection in Unit Settings via MQTT payload"]]>
               </value>
             </param>
             <param index="1">
@@ -34,22 +34,53 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[ UI value '0 °F' does not match published payload '81']]>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='Cool OAT Enable SP']"}
+  (Session info: chrome=124.0.6367.243)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.30.0', revision: '509c7f17cc*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [066ec7587f8897c6d9f7a8c8db366aa8, findElement {using=xpath, value=//div[text()='Cool OAT Enable SP']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.243, chrome: {chromedriverVersion: 124.0.6367.60 (8771130bd84f..., userDataDir: C:\Users\PRAKAS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61040}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61040/devtoo..., se:cdpVersion: 124.0.6367.243, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 066ec7587f8897c6d9f7a8c8db366aa8]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError:  UI value '0 °F' does not match published payload '81'
-at mqttPages.MqttPage.publishAndVerifySingleCard(MqttPage.java:156)
-at mqttStepDefinitions.MqttSteps.user_publishes_random_payload_from_excel_row_and_verifies_ui_label(MqttSteps.java:80)
-at ✽.User publishes random payload from Excel sheet "Unit Settings" row 29 and verifies UI Label(file:///C:/Users/PrakashArulmani/eclipse-workspace/Aaon%20Stratus/src/test/resources/MqttFeatures/Config/MqttUnitSettings.feature:60)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='Cool OAT Enable SP']"}
+  (Session info: chrome=124.0.6367.243)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.30.0', revision: '509c7f17cc*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [066ec7587f8897c6d9f7a8c8db366aa8, findElement {using=xpath, value=//div[text()='Cool OAT Enable SP']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.243, chrome: {chromedriverVersion: 124.0.6367.60 (8771130bd84f..., userDataDir: C:\Users\PRAKAS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61040}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61040/devtoo..., se:cdpVersion: 124.0.6367.243, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 066ec7587f8897c6d9f7a8c8db366aa8
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+at StepDefinitions.HelpMethods.getWebElement(HelpMethods.java:95)
+at mqttPages.MqttPage.clickDivByLabelText(MqttPage.java:193)
+at mqttStepDefinitions.MqttSteps.user_has_to_click_the_lable(MqttSteps.java:103)
+at ✽.user has to click the "Cool OAT Enable SP" Lable(file:///C:/Users/PrakashArulmani/eclipse-workspace/Aaon%20Stratus/src/test/resources/MqttFeatures/Config/MqttUnitSettings.feature:116)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" started-at="2025-06-26T23:17:27 IST" name="tearDownClass" finished-at="2025-06-26T23:17:27 IST" duration-ms="625" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" started-at="2025-06-27T11:39:16 IST" name="tearDownClass" finished-at="2025-06-27T11:39:17 IST" duration-ms="692" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
