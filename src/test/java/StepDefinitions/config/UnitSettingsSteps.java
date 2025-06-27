@@ -76,7 +76,7 @@ public class UnitSettingsSteps {
 
 	@When("User clicks next page button of the selected option")
 	public void user_next_page_button_of_the_selected_option() {
-		unit.clickNextPageButton();
+		UnitSettingsPage.clickNextPageButton();
 	}
 
 	@Then("Verify the fields in VAV Control page")

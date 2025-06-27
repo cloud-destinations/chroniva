@@ -1,43 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-25T16:40:39 IST" name="Default suite" finished-at="2025-06-25T16:41:58 IST" duration-ms="79909">
+  <suite started-at="2025-06-26T23:16:35 IST" name="Default suite" finished-at="2025-06-26T23:17:27 IST" duration-ms="52022">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@424e1977]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-06-25T16:40:39 IST" name="Default test" finished-at="2025-06-25T16:41:58 IST" duration-ms="79909">
+    <test started-at="2025-06-26T23:16:35 IST" name="Default test" finished-at="2025-06-26T23:17:27 IST" duration-ms="52022">
       <class name="StepDefinitions.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:StepDefinitions.TestRunner@424e1977]" started-at="2025-06-25T16:40:39 IST" name="setUpClass" finished-at="2025-06-25T16:40:40 IST" duration-ms="1432" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" started-at="2025-06-26T23:16:35 IST" name="setUpClass" finished-at="2025-06-26T23:16:36 IST" duration-ms="808" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62883f8a]]>
+                <![CDATA[org.testng.TestRunner@285f38f6]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@424e1977]" started-at="2025-06-25T16:40:40 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-25T16:41:58 IST" duration-ms="77763" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" started-at="2025-06-26T23:16:36 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-26T23:17:27 IST" duration-ms="50532" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Test each sensor payload selection via MQTT"]]>
+                <![CDATA["Test each Unit settings payload selection via MQTT"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["MQTT Sensor publishing"]]>
+                <![CDATA["MQTT Unit settings publishing"]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[ UI value '0 °F' does not match published payload '81']]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError:  UI value '0 °F' does not match published payload '81'
+at mqttPages.MqttPage.publishAndVerifySingleCard(MqttPage.java:156)
+at mqttStepDefinitions.MqttSteps.user_publishes_random_payload_from_excel_row_and_verifies_ui_label(MqttSteps.java:80)
+at ✽.User publishes random payload from Excel sheet "Unit Settings" row 29 and verifies UI Label(file:///C:/Users/PrakashArulmani/eclipse-workspace/Aaon%20Stratus/src/test/resources/MqttFeatures/Config/MqttUnitSettings.feature:60)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:StepDefinitions.TestRunner@424e1977]" started-at="2025-06-25T16:41:58 IST" name="tearDownClass" finished-at="2025-06-25T16:41:58 IST" duration-ms="662" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" started-at="2025-06-26T23:17:27 IST" name="tearDownClass" finished-at="2025-06-26T23:17:27 IST" duration-ms="625" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

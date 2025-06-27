@@ -7,7 +7,7 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
     features = {"src/test/resources"},
     glue = {"StepDefinitions", "mqttStepDefinitions"},
-    tags = "@smoke", //Tags to run TC
+    tags = "@MqttUnitsettings", //Tags to run TC
     plugin = {
         "pretty",
         "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
