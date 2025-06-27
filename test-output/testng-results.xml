@@ -2,30 +2,30 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-26T23:16:35 IST" name="Default suite" finished-at="2025-06-26T23:17:27 IST" duration-ms="52022">
+  <suite started-at="2025-06-27T12:42:27 IST" name="Default suite" finished-at="2025-06-27T12:43:09 IST" duration-ms="41222">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-06-26T23:16:35 IST" name="Default test" finished-at="2025-06-26T23:17:27 IST" duration-ms="52022">
+    <test started-at="2025-06-27T12:42:27 IST" name="Default test" finished-at="2025-06-27T12:43:09 IST" duration-ms="41222">
       <class name="StepDefinitions.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" started-at="2025-06-26T23:16:35 IST" name="setUpClass" finished-at="2025-06-26T23:16:36 IST" duration-ms="808" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" started-at="2025-06-27T12:42:28 IST" name="setUpClass" finished-at="2025-06-27T12:42:28 IST" duration-ms="757" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@285f38f6]]>
+                <![CDATA[org.testng.TestRunner@3ab6678b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" started-at="2025-06-26T23:16:36 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-26T23:17:27 IST" duration-ms="50532" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" started-at="2025-06-27T12:42:28 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-27T12:43:08 IST" duration-ms="39729" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Test each Unit settings payload selection via MQTT"]]>
+                <![CDATA["Validate Enable Unit Heating in VAV Control selection"]]>
               </value>
             </param>
             <param index="1">
@@ -34,22 +34,57 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
+          <exception class="java.lang.RuntimeException">
             <message>
-              <![CDATA[ UI value '0 °F' does not match published payload '81']]>
+              <![CDATA[ Error in publishing and verifying radio button:  Failed to verify radio/checkbox input with label: Enable Unit Heating]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError:  UI value '0 °F' does not match published payload '81'
-at mqttPages.MqttPage.publishAndVerifySingleCard(MqttPage.java:156)
-at mqttStepDefinitions.MqttSteps.user_publishes_random_payload_from_excel_row_and_verifies_ui_label(MqttSteps.java:80)
-at ✽.User publishes random payload from Excel sheet "Unit Settings" row 29 and verifies UI Label(file:///C:/Users/PrakashArulmani/eclipse-workspace/Aaon%20Stratus/src/test/resources/MqttFeatures/Config/MqttUnitSettings.feature:60)
+              <![CDATA[java.lang.RuntimeException:  Error in publishing and verifying radio button:  Failed to verify radio/checkbox input with label: Enable Unit Heating
+at mqttStepDefinitions.MqttSteps.publish_and_verify_radio_button_by_label(MqttSteps.java:35)
+at ✽.user loads data from Excel sheet "Unit Settings" row 48, publishes the MQTT message, and verifies the radio button name in row 38(file:///C:/Users/PrakashArulmani/eclipse-workspace/Aaon%20Stratus/src/test/resources/MqttFeatures/Config/MqttUnitSettings.feature:139)
+Caused by: java.lang.RuntimeException:  Failed to verify radio/checkbox input with label: Enable Unit Heating
+at mqttPages.MqttPage.VerifySelectedButtonUsingExcel(MqttPage.java:46)
+at mqttStepDefinitions.MqttSteps.publish_and_verify_radio_button_by_label(MqttSteps.java:32)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.util.NoSuchElementException:  Label not found: Enable Unit Heating
+at mqttPages.MqttPage.VerifySelectedButtonUsingExcel(MqttPage.java:22)
+... 31 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" started-at="2025-06-26T23:17:27 IST" name="tearDownClass" finished-at="2025-06-26T23:17:27 IST" duration-ms="625" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:StepDefinitions.TestRunner@7ee8290b]" started-at="2025-06-27T12:43:08 IST" name="tearDownClass" finished-at="2025-06-27T12:43:09 IST" duration-ms="682" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

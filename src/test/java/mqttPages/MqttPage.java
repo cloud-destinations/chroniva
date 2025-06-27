@@ -11,7 +11,6 @@ import StepDefinitions.HelpMethods;
 import StepDefinitions.Hooks;
 import mqttUtils.ExcelUtil;
 import mqttUtils.MqttClientPublisher;
-import pages.config.UnitSettingsPage;
 
 public class MqttPage {
 
@@ -132,34 +131,36 @@ public class MqttPage {
 	}
 
 	public static void publishAndVerifySingleCard(String topic) {
-		try {
-			// Generate and publish payload
-			int randomValue = new Random().nextInt(1000);
-			String payload = String.valueOf(randomValue);
+	    try {
+	        // Generate and publish payload
+	        int randomValue = new Random().nextInt(1000);
+	        String payload = String.valueOf(randomValue);
 
-			System.out.println(" Publishing random payload: " + payload + " to topic: " + topic);
-			MqttClientPublisher.quickPublish(topic, payload);
-			System.out.println(" Published to MQTT: " + topic + " => " + payload);
+	        System.out.println(" Publishing random payload: " + payload + " to topic: " + topic);
+	        MqttClientPublisher.quickPublish(topic, payload);
+	        System.out.println(" Published to MQTT: " + topic + " => " + payload);
 
-			// Wait for UI to reflect change
-			Thread.sleep(1500);
+	        // Wait for UI to reflect change
+	        Thread.sleep(1500);
 
-			WebElement uiValueElement = Hooks.getDriver().findElement(By.xpath("//div[@class='temperature-value']"));
-			String rawUIValue = uiValueElement.getText().trim();
-			String uiNumeric = rawUIValue.replaceAll("[^0-9.-]", "");
+	        WebElement uiValueElement = Hooks.getDriver().findElement(By.xpath("//div[@class='temperature-value']"));
+	        String rawUIValue = uiValueElement.getText().trim();
 
-			System.out.println(" UI displayed value: " + rawUIValue + " (Parsed: " + uiNumeric + ")");
+	        String uiNumeric = rawUIValue.replaceAll("[^0-9.-]", "");  // Remove units
+	        int uiIntValue = (int) Double.parseDouble(uiNumeric);       // Truncate .00 if present
 
-			if (!uiNumeric.equals(payload)) {
-				throw new AssertionError(
-						" UI value '" + rawUIValue + "' does not match published payload '" + payload + "'");
-			}
+	        System.out.println(" UI displayed value: " + rawUIValue + " (Parsed int: " + uiIntValue + ")");
 
-			System.out.println(" UI shows expected payload value.\n");
+	        if (uiIntValue != randomValue) {
+	            throw new AssertionError(
+	                " UI value '" + rawUIValue + "' does not match published payload '" + payload + "'");
+	        }
 
-		} catch (Exception e) {
-			throw new RuntimeException(" Error during publish and verify: " + e.getMessage(), e);
-		}
+	        System.out.println(" UI shows expected payload value.\n");
+
+	    } catch (Exception e) {
+	        throw new RuntimeException(" Error during publish and verify: " + e.getMessage(), e);
+	    }
 	}
 
 	public static void selectLabels(String labelText) {
@@ -178,10 +179,15 @@ public class MqttPage {
 		}
 	}
 
-	public static void clickNextPageButton() {
-		UnitSettingsPage.naxtPageButton.click();
-		HelpMethods.explicitWait_milliSeconds(500);
-	}
+//             	public static void clickNextPageButton() {
+//             		UnitSettingsPage.nextPageButton.click();
+//             		HelpMethods.explicitWait_milliSeconds(500);
+//             	}
+	//
+//             	public static void clickNextPageLabel() {
+//             		UnitSettingsPage.nextPageLabel.click();
+//             		HelpMethods.explicitWait_milliSeconds(500);
+//             	}
 
 	public static void clickDivByLabelText(String labelText) {
 		HelpMethods.explicitWait_milliSeconds(500);

@@ -9,14 +9,49 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">52,022</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">41,222</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">StepDefinitions.TestRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1750959996559</td><td rowspan="1">50532</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">StepDefinitions.TestRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1751008348785</td><td rowspan="1">39729</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">StepDefinitions.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Test each Unit settings payload selection via MQTT&quot;</td><td>&quot;MQTT Unit settings publishing&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError:  UI value &apos;0 °F&apos; does not match published payload &apos;81&apos;
-	at mqttPages.MqttPage.publishAndVerifySingleCard(MqttPage.java:156)
-	at mqttStepDefinitions.MqttSteps.user_publishes_random_payload_from_excel_row_and_verifies_ui_label(MqttSteps.java:80)
-	at ✽.User publishes random payload from Excel sheet &quot;Unit Settings&quot; row 29 and verifies UI Label(file:///C:/Users/PrakashArulmani/eclipse-workspace/Aaon%20Stratus/src/test/resources/MqttFeatures/Config/MqttUnitSettings.feature:60)
+<h2>Default test</h2><h3 id="m0">StepDefinitions.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Validate Enable Unit Heating in VAV Control selection&quot;</td><td>&quot;MQTT Unit settings publishing&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.RuntimeException:  Error in publishing and verifying radio button:  Failed to verify radio/checkbox input with label: Enable Unit Heating
+	at mqttStepDefinitions.MqttSteps.publish_and_verify_radio_button_by_label(MqttSteps.java:35)
+	at ✽.user loads data from Excel sheet &quot;Unit Settings&quot; row 48, publishes the MQTT message, and verifies the radio button name in row 38(file:///C:/Users/PrakashArulmani/eclipse-workspace/Aaon%20Stratus/src/test/resources/MqttFeatures/Config/MqttUnitSettings.feature:139)
+Caused by: java.lang.RuntimeException:  Failed to verify radio/checkbox input with label: Enable Unit Heating
+	at mqttPages.MqttPage.VerifySelectedButtonUsingExcel(MqttPage.java:46)
+	at mqttStepDefinitions.MqttSteps.publish_and_verify_radio_button_by_label(MqttSteps.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.util.NoSuchElementException:  Label not found: Enable Unit Heating
+	at mqttPages.MqttPage.VerifySelectedButtonUsingExcel(MqttPage.java:22)
+	... 31 more
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

@@ -72,9 +72,11 @@ public class UnitSettingsPage {
 	WebElement navigationPath;
 
 	@FindBy(css = "img[alt='next page']")
-	public static
-	WebElement naxtPageButton;
+	public static WebElement nextPageButton;
 
+	@FindBy(xpath = "(//img[@alt='arrow'])[2]")
+	public static WebElement nextPageLabel;
+	
 	@FindBy(css = ".temperature-label")
 	WebElement temperatureLabel;
 
@@ -139,9 +141,8 @@ public class UnitSettingsPage {
 	WebElement PrSetpoint;
 
 	@FindBy(xpath = "div.serviceItem-card.without-description")
-	public static
-	WebElement NextLabel;
-	
+	public static WebElement NextLabel;
+
 	public UnitSettingsPage() {
 		driver = Hooks.getDriver();
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
@@ -354,9 +355,14 @@ public class UnitSettingsPage {
 		NextLabel.click();
 		HelpMethods.explicitWait_milliSeconds(500);
 	}
-	
+
 	public static void clickNextPageButton() {
-		naxtPageButton.click();
+		nextPageButton.click();
+		HelpMethods.explicitWait_milliSeconds(500);
+	}
+	
+	public static void clickNextPageLabel() {
+		nextPageLabel.click();
 		HelpMethods.explicitWait_milliSeconds(500);
 	}
 

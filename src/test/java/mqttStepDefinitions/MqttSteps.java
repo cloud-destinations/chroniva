@@ -2,6 +2,7 @@ package mqttStepDefinitions;
 
 import java.util.Map;
 
+import StepDefinitions.HelpMethods;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import mqttPages.MqttPage;
@@ -85,16 +86,29 @@ public class MqttSteps extends UnitSettingsPage {
 
 	@Then("the user navigates to {string} 📊")
 	public void the_user_navigates_to(String Labels) {
+		HelpMethods.explicitWait_milliSeconds(500);
 		MqttPage.selectLabels(Labels);
 	}
 
 	@When("User clicks next page button of the selected option >")
 	public void user_clicks_next_page_button_of_the_selected_option() {
+		HelpMethods.explicitWait_milliSeconds(500);
 		UnitSettingsPage.clickNextPageButton();
+		HelpMethods.explicitWait_milliSeconds(500);
+
 	}
 
 	@When("user has to click the {string} Lable")
 	public void user_has_to_click_the_lable(String Label) {
 		MqttPage.clickDivByLabelText(Label);
+		HelpMethods.explicitWait_milliSeconds(500);
+
 	}
+
+	@Then("User navigates to the next label page 📄>")
+	public void user_navigates_to_the_next_label_page() {
+		UnitSettingsPage.clickNextPageLabel();
+		HelpMethods.explicitWait_milliSeconds(500);
+	}
+
 }
